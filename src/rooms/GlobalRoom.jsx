@@ -337,7 +337,7 @@ const GlobalRoom = () => {
           </button>
         </div>
         <div className="flex w-full flex-col gap-3 items-center justify-center border border-slate-200 bg-slate-100 shadow-lg p-5 rounded-lg">
-          <h1 className="text-xl font-bold">Chats</h1>
+          <h1 className="text-xl font-bold">Lai Ba Ki Chats</h1>
           <div
             ref={chatScrollRef}
             className="flex-grow h-[60vh] overscroll-x-none overflow-y-auto border w-full p-3 rounded-md bg-white"
