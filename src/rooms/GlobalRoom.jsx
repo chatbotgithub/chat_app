@@ -177,15 +177,26 @@ const GlobalRoom = () => {
     }
   };
 
+  // const scrollChatToBottom = () => {
+  //   // Scroll to the bottom of the element
+  //   if (chatScrollRef && chatScrollRef.current) {
+  //     chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
+  //     chatScrollRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+
   const scrollChatToBottom = () => {
-    // Scroll to the bottom of the element
-    if (chatScrollRef && chatScrollRef.current) {
-      chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
-      chatScrollRef.current.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
+  if (chatScrollRef.current) {
+    chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
+  }
+};
+
+  useEffect(() => {
+  scrollChatToBottom();
+}, [chats]);
+
 
   // SUPABASE SOCKET FOR REALTIME UPDATES
   const insertChatSocket = supabaseClient
