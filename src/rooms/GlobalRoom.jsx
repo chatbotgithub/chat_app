@@ -187,47 +187,50 @@ const GlobalRoom = () => {
   //   }
   // };
 
- const scrollChatToBottom = () => {
-  if (chatScrollRef.current) {
-    chatScrollRef.current.scrollTo({
-      top: chatScrollRef.current.scrollHeight,
-      behavior: "smooth",
-    });
-  }
-};
+  
+// yahan se coment kia
+  
+//  const scrollChatToBottom = () => {
+//   if (chatScrollRef.current) {
+//     chatScrollRef.current.scrollTo({
+//       top: chatScrollRef.current.scrollHeight,
+//       behavior: "smooth",
+//     });
+//   }
+// };
 
 
 
-  const [isUserAtBottom, setIsUserAtBottom] = useState(true);
+//   const [isUserAtBottom, setIsUserAtBottom] = useState(true);
 
-const handleScroll = () => {
-  if (!chatScrollRef.current) return;
+// const handleScroll = () => {
+//   if (!chatScrollRef.current) return;
 
-  const { scrollTop, scrollHeight, clientHeight } = chatScrollRef.current;
+//   const { scrollTop, scrollHeight, clientHeight } = chatScrollRef.current;
 
-  // User is considered at bottom if within 50px of the bottom
-  const atBottom = scrollHeight - scrollTop - clientHeight < 50;
-  setIsUserAtBottom(atBottom);
-};
+//   // User is considered at bottom if within 50px of the bottom
+//   const atBottom = scrollHeight - scrollTop - clientHeight < 50;
+//   setIsUserAtBottom(atBottom);
+// };
 
-useEffect(() => {
-  const chatBox = chatScrollRef.current;
-  if (chatBox) {
-    chatBox.addEventListener("scroll", handleScroll);
-  }
+// useEffect(() => {
+//   const chatBox = chatScrollRef.current;
+//   if (chatBox) {
+//     chatBox.addEventListener("scroll", handleScroll);
+//   }
 
-  return () => {
-    if (chatBox) {
-      chatBox.removeEventListener("scroll", handleScroll);
-    }
-  };
-}, []);
+//   return () => {
+//     if (chatBox) {
+//       chatBox.removeEventListener("scroll", handleScroll);
+//     }
+//   };
+// }, []);
 
-  useEffect(() => {
-  if (isUserAtBottom) {
-    scrollChatToBottom();
-  }
-}, [chats]);
+//   useEffect(() => {
+//   if (isUserAtBottom) {
+//     scrollChatToBottom();
+//   }
+// }, [chats]);
 
   // SUPABASE SOCKET FOR REALTIME UPDATES
   const insertChatSocket = supabaseClient
